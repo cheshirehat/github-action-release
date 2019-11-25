@@ -1,9 +1,8 @@
 name: release
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -23,5 +22,5 @@ jobs:
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-        GITHUB_TAG_NAME: ${{ github.event_name }}
+        GITHUB_TAG_NAME: ${{ github.release.tag_name }}
       run: npm run post
