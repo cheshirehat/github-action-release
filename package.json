@@ -1,0 +1,33 @@
+{
+  "name": "github-action-release",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "npx ts-node src/index.ts",
+    "post": "npx ts-node .github/action/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cheshirehat/github-action-release.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheshirehat/github-action-release/issues"
+  },
+  "homepage": "https://github.com/cheshirehat/github-action-release#readme",
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@slack/web-api": "^5.6.0",
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0"
+  }
+}
