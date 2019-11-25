@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const token = process.env.SLACK_TOKEN || "";
 const channelId = process.env.SLACK_CHANNEL_ID || "";
-const text = process.env.TEXT || "";
+const tagName = process.env.GITHUB_TAG_NAME || "";
 
 const web = new WebClient(token);
 
@@ -15,5 +15,5 @@ interface SlackPostMessage extends WebAPICallResult {
 }
 
 (async () => {
-  await web.chat.postMessage({ text: text, channel: channelId }) as SlackPostMessage
+  await web.chat.postMessage({ text: `Ver: ${tagName}がリリースされました！`, channel: channelId }) as SlackPostMessage
 }) ()
