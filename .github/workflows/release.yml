@@ -23,5 +23,5 @@ jobs:
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-        GITHUB_TAG_NAME: ${{ github.event.release.tag_name }}
+        GITHUB_TAG_NAME: ${{ github.event.action }}
       run: npm run post
