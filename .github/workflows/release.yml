@@ -2,8 +2,8 @@ name: release
 
 on:
   push:
-    branches:
-      - develop
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-        TEXT: hogehgoe
+        TEXT: リリースされたよ！
       run: npm run post
