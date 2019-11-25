@@ -9,6 +9,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+
+    - name: Node setup
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    
+    - name: TypeScript setup
+      run: npm install typescript -g
+
     - name: Notify Slack
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
